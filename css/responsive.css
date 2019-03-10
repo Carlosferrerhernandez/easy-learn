@@ -390,6 +390,33 @@
 11. 539px
 ************/
 
+@media only screen and (max-width: 320px)
+{
+	.home
+	{
+		height: 577px;
+	}
+
+	.home_slider_title
+	{
+		font-size: 30px;
+	}
+}
+
+@media only screen and (max-width: 375px) and (max-width: 420px)
+{
+	.home
+	{
+		height: 667px;
+	}
+
+	.home_slider_title
+	{
+		font-size: 30px;
+	}
+}
+
+
 @media only screen and (max-width: 539px)
 {
 	
