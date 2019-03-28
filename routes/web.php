@@ -14,3 +14,5 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/emails', 'MessagesController@store')->name('emails.store');
