@@ -5,29 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Mail\MessageRecieved;
 use Mail;
+use Alert;
+use Redirect;
 
 class MessagesController extends Controller
 {   
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
+   
     /**
      * Store a newly created resource in storage.
      *
@@ -37,61 +20,19 @@ class MessagesController extends Controller
     public function store(Request $request)
     {   
 
-        /*dd($request);*/
-
-        $message = $request->validate([
-            'nombre' => 'required|alpha',
-            'celular' => 'required|numeric',
-            'mensaje' => 'required|alpha',
+        $msg = $request->validate([
+            'nombre' => 'required',
+            'celular' => 'required',
+            'mensaje' => 'required',
         ]);
 
-        Mail::to('asesoriaseasylearn@gmail.com')->send(new MessageRecieved($message));
+        Mail::to('asesoriaseasylearn@gmail.com')->send(new MessageRecieved($msg));
 
-        return 'Mensaje enviando';
+        alert('Mensaje enviado satisfactoriamente!')->autoclose(3000);
+
+        alert()->success('Mensaje enviado satisfactoriamente!', '')->autoClose(10000)->showCloseButton('aria-label');
+            
+        return Redirect::back();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

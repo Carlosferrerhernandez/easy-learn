@@ -6,9 +6,9 @@
 	<title>Correo electronico</title>
 </head>
 <body>
-	<h2>Recibiste un mensaje de: {{$msg['nombre']}}</h2>
+	<h3>Recibiste un mensaje de: {{$msg['nombre']}}</h3>
 	<br>
-	<p>Mensaje: {{$msg['mensaje']}}</p>
-	<p>Su contacto telefonico es: <strong>{{$msg['celular']}}</strong></p>
+	<p>{{$msg['mensaje']}}</p>
+	<p>Información de contacto: {{$msg['celular']}}</p>
 </body>
 </html>

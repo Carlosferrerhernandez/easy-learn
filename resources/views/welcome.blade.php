@@ -339,6 +339,9 @@
             </footer>
         </div>
   </body>
+        
+        @include('sweetalert::alert')
+
         <!-- Plugin JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js" type="text/javascript"></script>
         <script src="{{ asset('js/popper.js')}}" type="text/javascript"></script>
