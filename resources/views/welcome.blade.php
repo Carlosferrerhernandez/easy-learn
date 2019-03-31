@@ -360,12 +360,4 @@
 
         <!-- Custom scripts for this template -->
         <script src="{{ asset('js/custom.js')}}" type="text/javascript"></script>
-        <script src="{{ asset('js/js')}}" type="text/javascript"></script>
-
-        <script type="text/javascript" charset="utf-8" async defer>
-        var host = "easylearncolombia.github.io"
-        if (window.location.host == host && window.location.protocol != "https:") {
-          window.location.protocol = "https:"
-      }
-      </script>
 </html>
